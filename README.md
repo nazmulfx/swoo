@@ -1,33 +1,61 @@
-### Swoo
+# 🛒 Swoo - Modern Ecommerce for ERPNext
 
-an ecommerce application for erpnext in react
+A cutting-edge ecommerce application built for **ERPNext**, featuring a high-performance **React** dashboard powered by **Vite**.
 
-### Installation
+---
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+## ⚡ Features
 
+- **Blazing Fast**: React + Vite for a seamless developer and user experience.
+- **ERPNext Powered**: Robust back-end integration using the latest Frappe standards.
+- **Developer First**: Sophisticated linting and formatting setup with `pre-commit`.
+- **Customizable**: Built with extensibility in mind for tailored ecommerce flows.
+
+---
+
+## 🚀 Installation
+
+Follow these steps to get **Swoo** up and running on your local bench:
+
+### 1. Fetch the App
 ```bash
 cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch version-16
-bench install-app swoo
+bench get-app https://github.com/nazmulfx/swoo --branch version-16
 ```
 
-### Contributing
+### 2. Install on Site
+```bash
+bench --site <your-site-name> install-app swoo
+```
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+### 3. Build Assets
+```bash
+bench build --app swoo
+```
 
+> [!TIP]
+> Make sure your bench environment is up-to-date before installation to ensure compatibility with React 19.
+
+---
+
+## 🛠️ Development & Contributing
+
+We welcome contributions! To maintain code quality, we use `pre-commit` hooks.
+
+### Setup Pre-commit
 ```bash
 cd apps/swoo
 pre-commit install
 ```
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+### Tooling
+Our CI/CD pipeline and pre-commit hooks utilize the following:
+- 🖋️ **Ruff**: For Python linting and formatting.
+- 🎨 **ESLint & Prettier**: For React/JS excellence.
+- ⚡ **Pyupgrade**: For keeping Python syntax modern.
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+---
 
-### License
+## 📜 License
 
-mit
+This project is licensed under the **MIT License**.
