@@ -4,6 +4,7 @@ import { FrappeProvider } from 'frappe-react-sdk'
 import Navbar from './components/Navbar/Navbar'
 import SearchBar from './components/SearchBar/SearchBar'
 import Hero from './components/Hero/Hero'
+import FeaturedArea from './components/FeaturedArea/FeaturedArea'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,7 +14,8 @@ function App() {
       <FrappeProvider>
         <Navbar />
         <SearchBar />
-        
+        <Hero />
+        <FeaturedArea />
         {/* <main className="container main-content">
           <section className="hero-placeholder">
             <h1>Welcome to Swoo Tech Mart</h1>
