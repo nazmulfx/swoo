@@ -146,12 +146,16 @@ export const LanguageProvider = ({ children }) => {
       try {
         const parsed = JSON.parse(saved);
         const matched = languages.find(l => l.code === parsed.code);
-        return matched || languages[0];
+        if (matched) return matched;
       } catch (e) {
-        return languages[0];
+        console.error("Error parsing saved language", e);
       }
     }
-    return languages[0];
+    
+    // Auto-detect browser language for new visitors
+    const browserLang = navigator.language.split('-')[0].toLowerCase();
+    const detected = languages.find(l => l.langCode.toLowerCase() === browserLang);
+    return detected || languages[0]; // Default to English if no match
   });
 
   const triggerTranslation = useCallback((langCode) => {
