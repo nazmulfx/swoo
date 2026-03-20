@@ -88,7 +88,7 @@ const Navbar = () => {
             <div className="user-login flex align-center gap-3">
               <Link to="/profile" className="user-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--dark)', overflow: 'hidden' }}>
                 <img 
-                  src="https://api.dicebear.com/7.x/notionists/svg?seed=Mark&backgroundColor=f0f2f5" 
+                  src={`data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'><rect width='24' height='24' rx='12' fill='%23f0f2f5'/><circle cx='12' cy='8' r='3.5' fill='%23adb5bd'/><path d='M4.5 19.5C4.5 16.4624 6.96243 14 10 14H14C17.0376 14 19.5 16.4624 19.5 19.5V20C19.5 21.1046 18.6046 22 17.5 22H6.5C5.39543 22 4.5 21.1046 4.5 20V19.5Z' fill='%23adb5bd'/></svg>`}
                   alt="User Avatar" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                 />
