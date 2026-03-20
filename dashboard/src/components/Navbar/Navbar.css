@@ -202,6 +202,14 @@
   color: var(--dark);
 }
 
+.login-text .value a {
+  transition: color 0.3s ease;
+}
+
+.login-text .value a:hover {
+  color: var(--primary, #00d93f) !important;
+}
+
 .cart-icon-wrapper {
   position: relative;
   width: 44px;

@@ -254,18 +254,22 @@ const Navbar = () => {
                 </button>
             </div>
             
-            <Link to="/login" className="user-login flex align-center gap-3">
-              <div className="user-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--dark)' }}>
+            <div className="user-login flex align-center gap-3">
+              <Link to="/login" className="user-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--dark)' }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg>
-              </div>
+              </Link>
               <div className="login-text">
                 <span className="label">WELCOME</span>
-                <span className="value">LOG IN / REGISTER</span>
+                <span className="value">
+                  <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>LOG IN</Link>
+                  <span style={{ margin: '0 4px', color: 'var(--text-secondary)' }}>/</span>
+                  <Link to="/register" style={{ textDecoration: 'none', color: 'inherit' }}>REGISTER</Link>
+                </span>
               </div>
-            </Link>
+            </div>
 
             <div className="cart-action flex align-center gap-3">
               <div className="cart-icon-wrapper">
