@@ -80,3 +80,28 @@ ul {
 .gap-2 { gap: 1rem; }
 .gap-3 { gap: 1.5rem; }
 .gap-4 { gap: 2rem; }
+
+/* 
+===============================================
+Hide Google Translate Default Native Widgets
+===============================================
+*/
+body {
+  top: 0 !important;
+}
+
+.skiptranslate iframe,
+.skiptranslate,
+#goog-gt-tt,
+.goog-te-spinner-pos,
+.goog-te-spinner-animation,
+.goog-te-balloon-frame {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+#google_translate_element {
+  display: none !important;
+}
