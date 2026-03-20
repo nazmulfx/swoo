@@ -9,7 +9,7 @@ const FeaturedArea = () => {
 
   const brands = [
     { name: 'JAMX', logo: 'https://img.icons8.com/color/48/jam-filled.png' },
-    { name: 'Digitek', logo: 'https://img.icons8.com/clouds/100/logo.png', color: '#00d02b' },
+    { name: 'Digitek', logo: 'https://img.icons8.com/clouds/100/logo.png', color: '#00bf37' },
     { name: 'tek react js', logo: 'https://img.icons8.com/officel/80/react.png' },
     { name: 'Grafbase', logo: 'https://img.icons8.com/color/48/graphql.png' },
     { name: 'MSI', logo: 'https://img.icons8.com/color/48/msi.png' },
