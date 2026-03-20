@@ -48,74 +48,61 @@ const Register = () => {
           <div className="register-card">
             <div className="register-illustration">
               <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-                {/* Reused Illustration from Login - consistent branding */}
-                
-                {/* Phone Frame */}
-                <rect x="180" y="50" width="140" height="280" rx="20" fill="#2c1a5f" />
-                <rect x="190" y="65" width="120" height="250" rx="10" fill="#fff" />
-                
-                {/* Lock Icon */}
-                <g transform="translate(230, 130) scale(0.8)">
-                  <rect x="0" y="20" width="40" height="30" rx="5" fill="#7a5cf5" />
-                  <path d="M10 20 V10 Q10 0 20 0 Q30 0 30 10 V20" stroke="#7a5cf5" strokeWidth="6" fill="none" />
-                  <circle cx="20" cy="35" r="4" fill="#fff" />
-                </g>
-                
-                {/* Gear Icons */}
-                <g transform="translate(320, 80) scale(0.5)" fill="#7a5cf5">
-                  <circle cx="30" cy="30" r="15" />
-                  {[0, 45, 90, 135, 180, 225, 270, 315].map(deg => (
-                    <rect key={deg} x="25" y="0" width="10" height="15" rx="2" transform={`rotate(${deg}, 30, 30)`} />
-                  ))}
-                </g>
-                <g transform="translate(350, 110) scale(0.3)" fill="#bdc3c7">
-                   <circle cx="30" cy="30" r="15" />
+                <defs>
+                  <linearGradient id="regGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: '#00d93f', stopOpacity: 1 }} />
+                    <stop offset="100%" style={{ stopColor: '#00c639', stopOpacity: 1 }} />
+                  </linearGradient>
+                  <filter id="shadowReg" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+                    <feOffset dx="0" dy="5" result="offsetblur" />
+                    <feComponentTransfer><feFuncA type="linear" slope="0.1" /></feComponentTransfer>
+                    <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                </defs>
+
+                {/* Registration/Welcome Metaphor */}
+                <g filter="url(#shadowReg)">
+                  {/* Large Profile Card / Member ID */}
+                  <rect x="120" y="80" width="260" height="180" rx="30" fill="#fff" stroke="#eee" strokeWidth="2" />
+                  <rect x="120" y="220" width="260" height="40" rx="0" fill="#f0fff4" />
+                  
+                  {/* Avatar Circle on Card */}
+                  <g transform="translate(160, 120)">
+                    <circle cx="30" cy="30" r="40" fill="#e8f5e9" />
+                    <circle cx="30" cy="22" r="15" fill="url(#regGrad)" />
+                    <path d="M5 55 Q30 40 55 55 V60 H5 Z" fill="url(#regGrad)" />
+                    <circle cx="55" cy="15" r="10" fill="#f1c40f" /> {/* Plus/Badge icon */}
+                    <text x="50" y="21" fill="#fff" fontSize="16" fontWeight="bold">+</text>
+                  </g>
+
+                  {/* Lines on Card */}
+                  <rect x="230" y="130" width="100" height="8" rx="4" fill="#eee" />
+                  <rect x="230" y="150" width="80" height="8" rx="4" fill="#eee" />
+                  <rect x="230" y="170" width="60" height="8" rx="4" fill="#00d93f" />
+
+                  {/* Celebratory Box / Gift */}
+                  <g transform="translate(320, 220) rotate(-10)">
+                    <rect x="0" y="0" width="80" height="70" rx="10" fill="#2c1a5f" />
+                    <rect x="0" y="15" width="80" height="15" fill="#7a5cf5" opacity="0.5" />
+                    <path d="M40 0 L50 -15 L30 -15 Z" fill="#7a5cf5" /> {/* Ribbon */}
+                  </g>
+
+                  {/* Small Character (The One Joining) */}
+                  <g transform="translate(80, 200)">
+                    <circle cx="30" cy="30" r="12" fill="#ffe0bd" />
+                    <path d="M15 45 Q30 40 45 45 L55 90 H5 Z" fill="#00bcd4" />
+                    <path d="M30 45 L70 30" stroke="#2c3e50" strokeWidth="3" fill="none" /> {/* Arm reaching out */}
+                  </g>
                 </g>
 
-                {/* Secure Badge */}
-                <g transform="translate(340, 180) scale(0.7)">
-                  <path d="M0 0 Q20 -10 40 0 V30 Q20 50 0 30 Z" fill="none" stroke="#2ecc71" strokeWidth="4" />
-                  <path d="M10 15 L20 25 L35 10" stroke="#2ecc71" strokeWidth="4" fill="none" strokeLinecap="round" />
+                {/* Floating Stars / Confetti */}
+                <g transform="translate(420, 80) rotate(20)" fill="#f1c40f">
+                  <path d="M10 0 L13 7 L20 7 L15 12 L17 20 L10 15 L3 20 L5 12 L0 7 L7 7 Z" />
                 </g>
-
-                {/* Chat Bubble */}
-                <g transform="translate(210, 100) scale(0.6)">
-                  <rect x="0" y="0" width="50" height="40" rx="10" fill="#00d93f" />
-                  <path d="M10 40 L15 50 L25 40" fill="#00d93f" />
-                  <text x="18" y="28" fill="#fff" fontSize="24" fontWeight="bold">$</text>
-                </g>
-
-                {/* Credit Card */}
-                <g transform="translate(180, 280)">
-                  <rect x="0" y="0" width="100" height="65" rx="8" fill="#00bcd4" />
-                  <rect x="0" y="55" width="100" height="10" rx="0" fill="#0097a7" />
-                  <circle cx="20" cy="20" r="8" fill="#fff" opacity="0.3" />
-                  <rect x="15" y="45" width="70" height="4" rx="2" fill="#fff" opacity="0.5" />
-                </g>
-
-                {/* Characters */}
-                <g transform="translate(210, 220) scale(0.8)">
-                   <circle cx="30" cy="30" r="10" fill="#ffe0bd" />
-                   <path d="M20 40 Q30 35 40 40 V70 H20 Z" fill="#f1c40f" />
-                   <path d="M20 70 L15 90 H0" stroke="#2c3e50" strokeWidth="6" fill="none" />
-                   <path d="M40 70 L45 90 H60" stroke="#2c3e50" strokeWidth="6" fill="none" />
-                </g>
-                <g transform="translate(370, 240) scale(0.8)">
-                   <circle cx="30" cy="30" r="10" fill="#ffe0bd" />
-                   <path d="M20 40 Q30 35 40 40 V70 H20 Z" fill="#00bcd4" />
-                   <rect x="25" y="70" width="10" height="40" fill="#2c3e50" />
-                   <rect x="35" y="70" width="10" height="40" fill="#2c3e50" />
-                </g>
-
-                {/* Plants */}
-                <g transform="translate(320, 310) scale(0.6)">
-                  <rect x="0" y="40" width="40" height="30" fill="#34495e" />
-                  <path d="M20 40 Q0 0 20 -20 Q40 0 20 40 Z" fill="#2ecc71" />
-                </g>
-                <g transform="translate(360, 310) scale(0.5)">
-                  <rect x="0" y="40" width="40" height="30" fill="#34495e" />
-                  <path d="M20 40 Q0 0 20 -20 Q40 0 20 40 Z" fill="#2ecc71" />
-                </g>
+                <circle cx="100" cy="60" r="8" fill="#00d93f" opacity="0.3" />
+                <circle cx="450" cy="200" r="6" fill="#7a5cf5" opacity="0.4" />
+                <rect x="380" y="300" width="12" height="12" fill="#e74c3c" transform="rotate(45)" opacity="0.3" />
               </svg>
             </div>
             
