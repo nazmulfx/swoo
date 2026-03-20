@@ -127,6 +127,52 @@
   letter-spacing: 1px;
 }
 
+.strength-meter {
+  margin-top: -5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.strength-bar {
+  flex: 1;
+  height: 6px;
+  background: #eee;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.strength-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transition: all 0.4s ease;
+  width: 0;
+}
+
+.strength-bar.score-1::after { width: 25%; background: #e74c3c; }
+.strength-bar.score-2::after { width: 50%; background: #f1c40f; }
+.strength-bar.score-3::after { width: 75%; background: #2ecc71; }
+.strength-bar.score-4::after { width: 100%; background: #00d93f; }
+
+.strength-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #bdc3c7;
+  text-transform: uppercase;
+  min-width: 80px;
+}
+
+.error-text {
+  font-size: 12px;
+  color: #e74c3c;
+  font-weight: 600;
+  margin-top: -5px;
+}
+
 .register-btn:hover {
   background: #00c639;
   transform: translateY(-2px);

@@ -14,6 +14,8 @@ const Register = () => {
     password: '',
     confirmPassword: ''
   });
+  const [passwordStrength, setPasswordStrength] = useState(0);
+  const [passwordError, setPasswordError] = useState('');
 
   const breadcrumbItems = [
     { label: 'Home', link: '/' },
@@ -29,12 +31,39 @@ const Register = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
 
+  const checkStrength = (password) => {
+    let strength = 0;
+    if (password.length > 7) strength++;
+    if (/[A-Z]/.test(password)) strength++;
+    if (/[0-9]/.test(password)) strength++;
+    if (/[^A-Za-z0-9]/.test(password)) strength++;
+    setPasswordStrength(strength);
+  };
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    
+    if (name === 'password') {
+      checkStrength(value);
+    }
+    
+    if (name === 'confirmPassword' || name === 'password') {
+      const otherValue = name === 'password' ? formData.confirmPassword : formData.password;
+      if (value !== otherValue && otherValue !== '') {
+        setPasswordError('Passwords do not match');
+      } else {
+        setPasswordError('');
+      }
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (formData.password !== formData.confirmPassword) {
+      setPasswordError('Passwords do not match');
+      return;
+    }
     console.log('Register submitted:', formData);
   };
 
@@ -167,6 +196,17 @@ const Register = () => {
                       )}
                     </button>
                   </div>
+                  {formData.password && (
+                    <div className="strength-meter">
+                      <div className={`strength-bar score-${passwordStrength}`}></div>
+                      <span className="strength-text">
+                        {passwordStrength === 1 && 'Weak'}
+                        {passwordStrength === 2 && 'Good'}
+                        {passwordStrength === 3 && 'Strong'}
+                        {passwordStrength === 4 && 'Very Strong'}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="form-group">
@@ -193,6 +233,7 @@ const Register = () => {
                       )}
                     </button>
                   </div>
+                  {passwordError && <span className="error-text">{passwordError}</span>}
                 </div>
                 
                 <button type="submit" className="register-btn">REGISTER</button>
