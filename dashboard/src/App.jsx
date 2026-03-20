@@ -13,32 +13,34 @@ import Footer from './components/Footer/Footer'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { LanguageProvider } from './context/LanguageContext'
 
+function App() {
   return (
-    <Router>
-      <div className="App">
-        <FrappeProvider>
-          <Routes>
-            <Route path="/" element={
-              <>
-                <Navbar />
-                <SearchBar />
-                <Hero />
-                <FeaturedArea />
-                <DealsOfTheDay />
-                <ProductShowcase />
-                <RecentlyViewed />
-                <Footer />
-              </>
-            } />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Routes>
-        </FrappeProvider>
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <div className="App">
+          <FrappeProvider>
+            <Routes>
+              <Route path="/" element={
+                <>
+                  <Navbar />
+                  <SearchBar />
+                  <Hero />
+                  <FeaturedArea />
+                  <DealsOfTheDay />
+                  <ProductShowcase />
+                  <RecentlyViewed />
+                  <Footer />
+                </>
+              } />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Routes>
+          </FrappeProvider>
+        </div>
+      </Router>
+    </LanguageProvider>
   )
 }
 

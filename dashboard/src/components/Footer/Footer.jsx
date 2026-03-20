@@ -1,4 +1,5 @@
 import React from 'react';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import './Footer.css';
 
 const Footer = () => {
@@ -92,10 +93,7 @@ const Footer = () => {
         <div className="footer-mid-row">
           <div className="footer-dropdowns">
             <button className="dropdown-btn">USD <span className="arrow">&#709;</span></button>
-            <button className="dropdown-btn">
-              <img src="https://img.icons8.com/color/48/usa.png" alt="ENG" className="flag-icon" />
-              Eng <span className="arrow">&#709;</span>
-            </button>
+            <LanguageSelector />
           </div>
 
           <div className="footer-subscribe">
