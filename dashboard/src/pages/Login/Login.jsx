@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import Footer from '../../components/Footer/Footer';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
@@ -170,7 +171,7 @@ const Login = () => {
               <button type="submit" className="login-btn">LOGIN</button>
               
               <div className="register-now">
-                <span>NEW USER ?</span> <a href="#">SIGN UP</a>
+                <span>NEW USER ?</span> <Link to="/register">SIGN UP</Link>
               </div>
             </form>
           </div>
