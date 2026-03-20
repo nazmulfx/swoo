@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    // Reset scroll state on route change
+    setIsScrolled(false);
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,16 +102,16 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="cart-action flex align-center gap-3">
+            <Link to="/cart" className="cart-action flex align-center gap-3" style={{ textDecoration: 'none', color: 'inherit' }}>
               <div className="cart-icon-wrapper">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-                <span className="cart-badge">5</span>
+                <span className="cart-badge">3</span>
               </div>
               <div className="cart-text">
                 <span className="label">CART</span>
-                <span className="value">$1,689.00</span>
+                <span className="value">$2,217.00</span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

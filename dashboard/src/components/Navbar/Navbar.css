@@ -150,6 +150,22 @@
   line-height: 1.3;
 }
 
+.cart-action {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cart-action:hover .cart-icon-wrapper {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: scale(1.05);
+}
+
+.cart-action:hover .cart-text .value {
+  color: var(--primary);
+}
+
 .label {
   font-size: 0.7rem;
   font-weight: 600;
@@ -181,6 +197,7 @@
   justify-content: center;
   color: var(--dark);
   border: 1.5px solid var(--border-color);
+  transition: all 0.3s ease;
 }
 
 .cart-badge {

@@ -12,6 +12,8 @@ import RecentlyViewed from './components/RecentlyViewed/RecentlyViewed'
 import Footer from './components/Footer/Footer'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
+import Cart from './pages/Cart/Cart'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 import { LanguageProvider } from './context/LanguageContext'
 
@@ -19,6 +21,7 @@ function App() {
   return (
     <LanguageProvider>
       <Router>
+        <ScrollToTop />
         <div className="App">
           <FrappeProvider>
             <Routes>
@@ -36,6 +39,7 @@ function App() {
               } />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/cart" element={<Cart />} />
             </Routes>
           </FrappeProvider>
         </div>
