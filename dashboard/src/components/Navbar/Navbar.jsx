@@ -1,9 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const [selectedLang, setSelectedLang] = useState({ code: 'Eng', langCode: 'en', flag: 'us', name: 'English' });
+
+  const languages = [
+    { code: 'Eng', langCode: 'en', flag: 'us', name: 'English' },
+    { code: 'Esp', langCode: 'es', flag: 'es', name: 'Español' },
+    { code: 'Fra', langCode: 'fr', flag: 'fr', name: 'Français' },
+    { code: 'Deu', langCode: 'de', flag: 'de', name: 'Deutsch' },
+    { code: 'Jpn', langCode: 'ja', flag: 'jp', name: '日本語' }
+  ];
+
+  const handleLanguageChange = (e, lang) => {
+    e.stopPropagation();
+    setSelectedLang(lang);
+    setLangOpen(false);
+
+    // Programmatically trigger the hidden Google Translate dropdown
+    setTimeout(() => {
+      const selectField = document.querySelector('.goog-te-combo');
+      if (selectField) {
+        selectField.value = lang.langCode;
+        selectField.dispatchEvent(new Event('change'));
+      }
+    }, 100);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="navbar">
+    <header className="navbar-wrapper" style={{ height: '126px', zIndex: 1000, position: 'relative' }}>
+      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       {/* Top Bar */}
       <div className="top-bar">
         <div className="container flex justify-between align-center">
@@ -23,12 +63,29 @@ const Navbar = () => {
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <div className="dropdown flex align-center gap-1">
-              <img src="https://flagcdn.com/w20/us.png" alt="US Flag" width="16" />
-              <span>Eng</span>
-              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            
+            {/* Interactive Language Dropdown */}
+            <div className="dropdown notranslate flex align-center gap-1" style={{ position: 'relative', cursor: 'pointer' }} onClick={() => setLangOpen(!langOpen)}>
+              <img src={`https://flagcdn.com/w20/${selectedLang.flag}.png`} alt={`${selectedLang.code} Flag`} width="16" />
+              <span>{selectedLang.code}</span>
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: langOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }}>
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
+
+              {langOpen && (
+                <div className="dropdown-menu">
+                  {languages.map(lang => (
+                    <div 
+                      key={lang.code} 
+                      className={`dropdown-item ${selectedLang.code === lang.code ? 'active' : ''}`}
+                      onClick={(e) => handleLanguageChange(e, lang)}
+                    >
+                      <img src={`https://flagcdn.com/w20/${lang.flag}.png`} alt={lang.name} width="16" />
+                      <span>{lang.name}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -68,7 +125,12 @@ const Navbar = () => {
             </div>
             
             <div className="user-login flex align-center gap-3">
-              <div className="user-avatar"></div>
+              <div className="user-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--dark)' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
               <div className="login-text">
                 <span className="label">WELCOME</span>
                 <span className="value">LOG IN / REGISTER</span>
@@ -90,6 +152,7 @@ const Navbar = () => {
       </div>
       <div className="bottom-border"></div>
     </nav>
+    </header>
   );
 };
 
