@@ -1,0 +1,304 @@
+.footer-area {
+  background: var(--white, #fff);
+  padding: 60px 0 20px 0;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  font-family: inherit;
+  color: #555;
+}
+
+/* Top Row */
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.footer-brand {
+  flex: 0 0 30%;
+  padding-right: 40px;
+}
+
+.footer-brand-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  color: #777;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.contact-phone {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary, #00bf37);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: opacity 0.3s;
+}
+
+.contact-phone:hover {
+  opacity: 0.8;
+}
+
+.footer-address {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.footer-socials a:hover {
+  background: var(--primary, #00bf37);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 191, 55, 0.2);
+}
+
+.footer-links-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.footer-column h5 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  font-size: 0.85rem;
+  color: #777;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: var(--primary, #00bf37);
+  padding-left: 4px;
+}
+
+/* Middle Row */
+.footer-mid-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.footer-dropdowns {
+  flex: 0 0 30%;
+  display: flex;
+  gap: 15px;
+}
+
+.dropdown-btn {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 15px;
+  font-size: 0.85rem;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+  border-color: #aaa;
+}
+
+.flag-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.arrow {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+.footer-subscribe {
+  flex: 1;
+  max-width: 65%;
+  margin-left: auto;
+}
+
+.subscribe-header {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.highlight-red {
+  color: #e53935;
+}
+
+.subscribe-form {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.subscribe-form:focus-within {
+  border-color: var(--primary, #00bf37);
+}
+
+.subscribe-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  color: #333;
+  background: transparent;
+  padding: 5px 0;
+}
+
+.subscribe-form input::placeholder {
+  color: #aaa;
+}
+
+.subscribe-form button {
+  background: none;
+  border: none;
+  color: var(--primary, #00bf37);
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: opacity 0.3s;
+}
+
+.subscribe-form button:hover {
+  opacity: 0.7;
+}
+
+.subscribe-note {
+  font-size: 0.75rem;
+  color: #999;
+  margin: 0;
+  font-style: italic;
+}
+
+.subscribe-note a {
+  color: #555;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.subscribe-note a:hover {
+  color: var(--primary, #00bf37);
+}
+
+/* Bottom Row */
+.footer-bottom-row {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.footer-copyright strong {
+  color: #111;
+}
+
+.footer-payments {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-payments img {
+  height: 24px;
+  object-fit: contain;
+}
+
+.klarna-logo {
+  font-size: 1.1rem;
+  font-family: serif;
+  color: #111;
+  letter-spacing: -0.5px;
+}
+
+.footer-mobile-link a {
+  font-size: 0.85rem;
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.footer-mobile-link a:hover {
+  color: var(--primary, #00bf37);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-top-row { flex-direction: column; gap: 40px; }
+  .footer-brand { padding-right: 0; }
+  .footer-mid-row { flex-direction: column; align-items: flex-start; gap: 30px; }
+  .footer-subscribe { max-width: 100%; margin-left: 0; }
+  .footer-bottom-row { flex-direction: column; gap: 20px; text-align: center; }
+}
+
+@media (max-width: 600px) {
+  .footer-links-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+}
