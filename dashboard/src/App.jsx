@@ -14,6 +14,7 @@ import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import Cart from './pages/Cart/Cart'
 import Profile from './pages/Profile/Profile'
+import NotFound from './pages/NotFound/NotFound'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 import { LanguageProvider } from './context/LanguageContext'
@@ -42,6 +43,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </FrappeProvider>
         </div>
