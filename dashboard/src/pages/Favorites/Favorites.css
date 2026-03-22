@@ -1,0 +1,338 @@
+.favorites-page {
+  background-color: #e9eff6;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.breadcrumb-wrap {
+  margin-top: 20px;
+}
+
+.fav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.fav-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #111;
+  letter-spacing: -1.2px;
+  margin: 0;
+}
+
+.fav-subtitle {
+  color: #888;
+  font-weight: 600;
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary-black {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-black:hover {
+  background: #00d93f;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 217, 63, 0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #111;
+  border: 1.5px solid #d1d9e2;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: #111;
+  background: #fff;
+}
+
+/* LIST CONTAINER */
+.fav-list-container {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.fav-items-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.fav-item-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 180px 240px;
+  padding: 30px 40px;
+  border-bottom: 1px solid #f0f3f8;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.fav-item-row:last-child {
+  border-bottom: none;
+}
+
+.fav-item-row:hover {
+  background-color: #fcfdfe;
+}
+
+.item-img-box {
+  width: 100px;
+  height: 120px;
+  background: #f8f9fb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.item-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.item-info-col {
+  padding-right: 40px;
+}
+
+.item-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.star-icon {
+  color: #ffc107;
+  font-size: 0.9rem;
+}
+
+.rating-val {
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #111;
+}
+
+.review-count {
+  color: #999;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.item-product-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.4;
+  margin: 0 0 12px 0;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.item-product-name:hover {
+  color: #00d93f;
+}
+
+.item-stock-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #777;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.instock { background-color: #00d93f; }
+.status-dot.outofstock { background-color: #ff4d4f; }
+
+.item-price-val {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #111;
+  letter-spacing: -0.5px;
+}
+
+.item-actions-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.add-to-cart-btn {
+  background: #00d93f;
+  color: #fff;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.add-to-cart-btn:hover:not(:disabled) {
+  background: #00bf37;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 217, 63, 0.2);
+}
+
+.add-to-cart-btn:disabled {
+  background: #e2e8f0;
+  color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.trash-remove-btn {
+  background: #f1f4f9;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff4d4f;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.trash-remove-btn:hover {
+  background: #ffeded;
+  transform: scale(1.1);
+}
+
+.fav-footer-nav {
+  margin: 50px 0 60px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.continue-shopping-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 850;
+  font-size: 0.9rem;
+  padding: 18px 35px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  letter-spacing: 0.5px;
+}
+
+.continue-shopping-btn svg {
+  transition: transform 0.4s ease;
+  color: #00d93f;
+}
+
+.continue-shopping-btn:hover {
+  background: #111;
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.continue-shopping-btn:hover svg {
+  transform: translateX(-6px);
+  color: #00d93f;
+}
+
+/* EMPTY STATE */
+.empty-wishlist-state {
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.heart-icon {
+  font-size: 5rem;
+  color: #e2e8f0;
+  margin-bottom: 20px;
+}
+
+.empty-wishlist-state h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0 0 10px 0;
+}
+
+.empty-wishlist-state p {
+  color: #888;
+  margin-bottom: 35px;
+  font-weight: 600;
+}
+
+.btn-swoo-green {
+  background: #00d93f;
+  color: #fff;
+  padding: 16px 40px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 900;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-swoo-green:hover {
+  background: #00bf37;
+  box-shadow: 0 10px 25px rgba(0, 217, 63, 0.2);
+}
+
+@media (max-width: 1100px) {
+  .fav-item-row {
+    grid-template-columns: 120px 1fr 140px;
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+  .item-actions-col {
+    grid-column: 2 / 4;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .fav-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .fav-item-row { grid-template-columns: 1fr; text-align: center; }
+  .item-img-box { margin: 0 auto; }
+  .item-info-col { padding: 0; }
+  .item-rating-row, .item-stock-status { justify-content: center; }
+  .item-actions-col { justify-content: center; grid-column: 1; }
+}
