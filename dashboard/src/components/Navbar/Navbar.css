@@ -136,6 +136,28 @@
   color: var(--primary);
 }
 
+.fav-btn {
+  position: relative;
+  text-decoration: none;
+}
+
+.fav-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--primary);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--white);
+}
+
 .user-avatar {
   width: 44px;
   height: 44px;
