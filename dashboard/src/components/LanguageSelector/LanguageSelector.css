@@ -85,3 +85,20 @@
   color: var(--primary, #00d93f);
   font-weight: 600;
 }
+
+/* Fix for footer dropdown position */
+.footer-dropdowns .language-dropdown-menu {
+  top: auto;
+  bottom: calc(100% + 10px);
+  right: auto;
+  left: 0;
+}
+
+/* Fix for footer dropdown arrow direction */
+.footer-dropdowns .language-selector-dropdown .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.footer-dropdowns .language-selector-dropdown .arrow-icon.open {
+  transform: rotate(0deg);
+}
