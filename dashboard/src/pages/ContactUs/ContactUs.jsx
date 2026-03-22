@@ -243,9 +243,14 @@ const ContactUs = () => {
         </div>
 
         {/* Map Section */}
-        <section className="map-section">
-          <h2 className="map-title lg-theme-title">FIND US ON GOOGLE MAP</h2>
-          <div className="map-wrapper map-premium">
+        <section className="map-card contact-premium-card">
+          <div className="contact-header-area" style={{ paddingBottom: '30px' }}>
+             <div className="contact-header-text">
+                <h1>Find Us on Google Map</h1>
+                <p>VISIT OUR RETAIL LOCATIONS</p>
+             </div>
+          </div>
+          <div className="map-container-inner">
              <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.0538!2d10.5052!3d43.8436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d57f893698064d%3A0x6338303030303030!2sChiesa%20di%20San%20Francesco!5e0!3m2!1sen!2sbd!4v1711041600000!5m2!1sen!2sbd" 
                 width="100%" 
