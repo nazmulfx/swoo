@@ -18,6 +18,7 @@ import ContactUs from './pages/ContactUs/ContactUs'
 import NotFound from './pages/NotFound/NotFound'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import TermsAndConditions from './pages/TermsAndConditions/TermsAndConditions'
+import Checkout from './pages/Checkout/Checkout'
 
 import { LanguageProvider } from './context/LanguageContext'
 
@@ -47,6 +48,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/terms" element={<TermsAndConditions />} />
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </FrappeProvider>

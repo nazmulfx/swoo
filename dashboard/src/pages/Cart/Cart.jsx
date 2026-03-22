@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import Footer from '../../components/Footer/Footer';
@@ -156,7 +157,7 @@ const Cart = () => {
                 <strong>${total.toLocaleString('en-US', { minimumFractionDigits: 2 })}</strong>
               </div>
               
-              <button className="checkout-btn">CHECKOUT</button>
+              <Link to="/checkout" className="checkout-btn" style={{ display: 'block', textAlign: 'center', boxSizing: 'border-box', textDecoration: 'none' }}>CHECKOUT</Link>
             </div>
           </aside>
         </div>
