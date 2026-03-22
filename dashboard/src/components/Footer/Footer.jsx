@@ -93,7 +93,6 @@ const Footer = () => {
         {/* Middle Row: Dropdowns & Subscribe */}
         <div className="footer-mid-row">
           <div className="footer-dropdowns">
-            <button className="dropdown-btn">USD <span className="arrow">&#709;</span></button>
             <LanguageSelector />
           </div>
 
