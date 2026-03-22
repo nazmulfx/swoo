@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import './Footer.css';
 
@@ -58,7 +59,7 @@ const Footer = () => {
               <h5>COMPANY</h5>
               <ul>
                 <li><a href="#">About Swoo</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><Link to="/contact">Contact</Link></li>
                 <li><a href="#">Career</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Sitemap</a></li>
@@ -70,7 +71,7 @@ const Footer = () => {
               <ul>
                 <li><a href="#">Customer Service</a></li>
                 <li><a href="#">Policy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
+                <li><Link to="/terms">Terms & Conditions</Link></li>
                 <li><a href="#">Track Order</a></li>
                 <li><a href="#">FAQs</a></li>
                 <li><a href="#">My Account</a></li>

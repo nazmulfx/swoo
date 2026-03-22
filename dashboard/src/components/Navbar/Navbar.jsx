@@ -72,7 +72,7 @@ const Navbar = () => {
             <li className="active"><a href="#" className="flex align-center gap-1">HOMES <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></a></li>
             <li><a href="#" className="flex align-center gap-1">PAGES <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></a></li>
             <li><a href="#" className="flex align-center gap-1">PRODUCTS <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><Link to="/contact">CONTACT</Link></li>
           </ul>
 
           <div className="user-actions flex align-center gap-4">
