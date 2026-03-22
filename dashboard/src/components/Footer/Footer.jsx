@@ -58,7 +58,7 @@ const Footer = () => {
             <div className="footer-column">
               <h5>COMPANY</h5>
               <ul>
-                <li><a href="#">About Swoo</a></li>
+                <li><Link to="/about">About Swoo</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
                 <li><a href="#">Career</a></li>
                 <li><a href="#">Blog</a></li>
